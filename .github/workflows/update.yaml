@@ -11,6 +11,10 @@ jobs:
     env:
       MAVEN_OPTS: --enable-preview
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
       - name: Set up repository
         run: |
           cd ~/nowbot
@@ -23,6 +27,11 @@ jobs:
           cd ~/nowbot
           mvnd clean
           mvnd package
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nowbot-linux
+          path: ~/nowbot/target/nowbot-linux.jar
   update:
     runs-on: self-hosted
     needs: build
