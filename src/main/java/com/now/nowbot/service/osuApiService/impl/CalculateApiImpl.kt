@@ -32,7 +32,7 @@ import kotlin.time.Duration.Companion.seconds
         private val LOCAL_STAR = true
 
         // 如果为真，则会使用 rosu 的计算。否则使用官网的计算
-        private val R_OSU = true
+        private val R_OSU = false
 
         // 如果为真，则会使用 rosu 的星数。否则使用官网的星数
         // 仅在 R_OSU 为真时可以使用 rosu。
