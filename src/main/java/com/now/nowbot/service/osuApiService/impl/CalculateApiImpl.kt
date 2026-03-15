@@ -14,9 +14,9 @@ import com.now.nowbot.util.AsyncMethodExecutor
 import com.now.nowbot.util.JacksonUtil
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.spring.osu.extended.rosu.JniBeatmap
-import org.spring.osu.extended.rosu.JniPerformanceAttributes
-import org.spring.osu.extended.rosu.JniScoreState
+// import org.spring.osu.extended.rosu.JniBeatmap
+// import org.spring.osu.extended.rosu.JniPerformanceAttributes
+// import org.spring.osu.extended.rosu.JniScoreState
 import org.springframework.stereotype.Service
 import java.util.concurrent.Callable
 import java.util.concurrent.ConcurrentHashMap
@@ -40,9 +40,9 @@ import kotlin.time.Duration.Companion.seconds
 
         private val log: Logger = LoggerFactory.getLogger(Companion::class.java)
 
-        private fun JniPerformanceAttributes.toRosuPerformance(): RosuPerformance {
-            return RosuPerformance(this)
-        }
+//        private fun JniPerformanceAttributes.toRosuPerformance(): RosuPerformance {
+//            return RosuPerformance(this)
+//        }
 
     }
 
@@ -548,19 +548,19 @@ import kotlin.time.Duration.Companion.seconds
         }.toRosuPerformance()
     }
 
-    private fun getJniBeatmapAndIsConvert(
-        beatmapID: Long, mode: org.spring.osu.OsuMode, set: (JniBeatmap) -> Unit
-    ): Pair<JniBeatmap, Boolean>? {
-        val map = beatmapApiService.getBeatmapFileByte(beatmapID) ?: return null
-        val beatmap = JniBeatmap(map)
-        set(beatmap)
-        val isConvert = if (beatmap.mode != mode && beatmap.mode == org.spring.osu.OsuMode.Osu) {
-            beatmap.convertInPlace(mode)
-            true
-        } else {
-            false
-        }
-        return beatmap to isConvert
-    }
+//    private fun getJniBeatmapAndIsConvert(
+//        beatmapID: Long, mode: org.spring.osu.OsuMode, set: (JniBeatmap) -> Unit
+//    ): Pair<JniBeatmap, Boolean>? {
+//        val map = beatmapApiService.getBeatmapFileByte(beatmapID) ?: return null
+//        val beatmap = JniBeatmap(map)
+//        set(beatmap)
+//        val isConvert = if (beatmap.mode != mode && beatmap.mode == org.spring.osu.OsuMode.Osu) {
+//            beatmap.convertInPlace(mode)
+//            true
+//        } else {
+//            false
+//        }
+//        return beatmap to isConvert
+//    }
 
 }

@@ -197,11 +197,11 @@
             <version>1.26.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.spring</groupId>
-            <artifactId>osu-extended</artifactId>
-            <version>0.0.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.spring</groupId>-->
+<!--            <artifactId>osu-extended</artifactId>-->
+<!--            <version>0.0.2</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.yumu</groupId>
